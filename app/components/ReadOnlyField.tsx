@@ -20,27 +20,27 @@ export default function ReadOnlyField({
   const hasContent = value && value.trim().length > 0;
 
   // Todos los campos usan el mismo tono de azul
-  const backgroundClass = 'bg-slate-800/60';
+  const backgroundClass = 'bg-custom-card-bg-light/60';
 
   return (
     <>
       <div className="group">
         <div className={`p-4 rounded-lg transition-all duration-200 hover:bg-opacity-80 ${backgroundClass}`}>
-          <label className="block text-sm font-medium text-gray-200 mb-3">
+          <label className="block text-sm font-medium text-custom-text-muted mb-3">
             {label}
           </label>
           <div className="relative">
-            <div className="w-full px-3 py-2 bg-black/20 rounded-md text-white cursor-default">
+            <div className="w-full px-3 py-2 bg-custom-bg-dark/20 rounded-md text-custom-text-light cursor-default">
               <div className="flex items-center justify-between">
                 <div className="flex-1 min-w-0">
-                  <p className={`text-sm truncate ${!hasContent ? 'text-gray-500' : 'text-white'}`}>
+                  <p className={`text-sm truncate ${!hasContent ? 'text-custom-text-muted' : 'text-custom-text-light'}`}>
                     {displayValue}
                   </p>
                 </div>
                 {hasContent && (
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="ml-3 p-1.5 text-accent-400 hover:text-accent-300 hover:bg-accent-600/20 rounded-md transition-colors duration-200 opacity-0 group-hover:opacity-100"
+                    className="ml-3 p-1.5 text-custom-accent hover:text-custom-accent/80 hover:bg-custom-accent/20 rounded-md transition-colors duration-200 opacity-0 group-hover:opacity-100"
                     title="Ver más"
                   >
                     <svg
@@ -75,7 +75,7 @@ export default function ReadOnlyField({
         onClose={() => setIsModalOpen(false)}
         title={label}
       >
-        <div className="whitespace-pre-wrap text-white leading-relaxed text-base">
+        <div className="whitespace-pre-wrap text-custom-text-light leading-relaxed text-base">
           {displayValue}
         </div>
       </Modal>

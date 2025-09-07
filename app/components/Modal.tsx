@@ -53,13 +53,13 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
       className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
       onClick={handleOverlayClick}
     >
-      <div className="bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 w-full max-w-4xl max-h-[90vh] flex flex-col">
+      <div className="bg-custom-card-bg rounded-2xl shadow-deep-dark border border-custom-border w-full max-w-4xl max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gray-800/50">
-          <h2 className="text-2xl font-bold text-white">{title}</h2>
+        <div className="flex items-center justify-between p-6 border-b border-custom-border bg-custom-card-bg-light/50">
+          <h2 className="text-2xl font-bold text-custom-text-light">{title}</h2>
           <button
             onClick={onClose}
-            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors duration-200"
+            className="p-2 text-custom-text-muted hover:text-custom-text-light hover:bg-custom-hover-bg rounded-lg transition-colors duration-200"
           >
             <svg
               className="w-6 h-6"
@@ -78,17 +78,17 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-6 bg-gray-900">
-          <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+        <div className="flex-1 overflow-y-auto p-6 bg-custom-bg-dark">
+          <div className="bg-custom-card-bg-light/50 rounded-lg p-4 border border-custom-border">
             {children}
           </div>
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-gray-700 bg-gray-800/50">
+        <div className="p-6 border-t border-custom-border bg-custom-card-bg-light/50">
           <button
             onClick={onClose}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+            className="w-full bg-gradient-button-accent text-custom-text-light font-semibold py-3 px-6 rounded-lg transition-all duration-200"
           >
             Cerrar
           </button>

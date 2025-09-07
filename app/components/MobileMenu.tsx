@@ -44,19 +44,19 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
 
       {/* Menú móvil */}
       <div className={`
-        fixed top-0 left-0 h-screen w-3/4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 h-screen w-3/4 bg-custom-bg-dark z-50 transform transition-transform duration-300 ease-in-out
         lg:hidden
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
         {/* Header del menú móvil */}
-        <div className="p-6 border-b border-gray-700 bg-gray-800">
+        <div className="p-6 border-b border-custom-border bg-custom-card-bg">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-white">
+            <h1 className="text-xl font-bold text-custom-text-light">
               Panel de Agentes IA
             </h1>
             <button
               onClick={onClose}
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors duration-200"
+              className="p-2 text-custom-text-muted hover:text-custom-text-light hover:bg-custom-hover-bg rounded-lg transition-colors duration-200"
             >
               <svg
                 className="w-6 h-6"
@@ -73,16 +73,16 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
               </svg>
             </button>
           </div>
-          <div className="text-sm text-gray-300 mt-2">
+          <div className="text-sm text-custom-text-muted mt-2">
             <p className="font-medium">
               {user.user_metadata?.full_name || "Usuario"}
             </p>
-            <p className="text-gray-400">{user.email}</p>
+            <p className="text-custom-text-muted">{user.email}</p>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 p-4 overflow-y-auto bg-gray-900">
+        <nav className="flex-1 p-4 overflow-y-auto bg-custom-bg-dark">
           <ul className="space-y-2">
             {/* Dashboard */}
             <li>
@@ -91,8 +91,8 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
                 onClick={handleLinkClick}
                 className={`flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
                   isActive("/dashboard")
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                    ? "bg-custom-accent text-custom-text-light"
+                    : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
                 }`}
               >
                 <svg
@@ -118,15 +118,15 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
               </Link>
             </li>
 
-            {/* Módulo 2 */}
+            {/* Historial */}
             <li>
               <Link
-                to="/modulo2"
+                to="/historial"
                 onClick={handleLinkClick}
                 className={`flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
-                  isActive("/modulo2")
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                  isActive("/historial")
+                    ? "bg-custom-accent text-custom-text-light"
+                    : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
                 }`}
               >
                 <svg
@@ -139,10 +139,10 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Módulo 2
+                Historial
               </Link>
             </li>
 
@@ -150,7 +150,7 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
             <li>
               <button
                 onClick={() => setIsAgentsExpanded(!isAgentsExpanded)}
-                className="flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors duration-200 text-gray-300 hover:bg-gray-700 hover:text-white"
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors duration-200 text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
               >
                 <div className="flex items-center">
                   <svg
@@ -196,8 +196,8 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
                           onClick={handleLinkClick}
                           className={`flex items-center px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
                             isAgentActive(agent.id)
-                              ? "bg-blue-600 text-white"
-                              : "text-gray-400 hover:bg-gray-700 hover:text-white"
+                              ? "bg-custom-accent text-custom-text-light"
+                              : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
                           }`}
                         >
                           <svg
@@ -218,7 +218,7 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
                       </li>
                     ))
                   ) : (
-                    <li className="px-3 py-2 text-sm text-gray-500">
+                    <li className="px-3 py-2 text-sm text-custom-text-muted">
                       No hay agentes creados
                     </li>
                   )}
@@ -229,7 +229,7 @@ export default function MobileMenu({ user, agents = [], isOpen, onClose }: Mobil
         </nav>
 
         {/* Footer - Cerrar Sesión */}
-        <div className="p-4 border-t border-gray-700 bg-gray-800">
+        <div className="p-4 border-t border-custom-border bg-custom-card-bg">
           <Form method="post" action="/logout">
             <button
               type="submit"

@@ -6,7 +6,8 @@ export default [
   route("test-db", "routes/test-db.tsx"),
   layout("routes/_layout.tsx", [
     route("dashboard", "routes/dashboard.tsx"),
-    route("modulo2", "routes/modulo2.tsx"),
+    route("historial", "routes/historial.tsx"),
+    route("historial/:id", "routes/historial.$id.tsx"),
     route("agent/:id", "routes/agent.$id.tsx"),
     route("logout", "routes/logout.tsx"),
   ]),

@@ -29,10 +29,10 @@ export default function Layout({ user, agents = [] }: LayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-dark">
+    <div className="min-h-screen bg-custom-bg-dark">
       {/* Header móvil con botón hamburguesa */}
-      <header className="lg:hidden bg-gradient-card border-b border-dark-600 px-4 py-3 flex items-center justify-between">
-        <h1 className="text-lg font-bold text-white">Panel de Agentes IA</h1>
+      <header className="lg:hidden bg-custom-card-bg border-b border-custom-border px-4 py-3 flex items-center justify-between">
+        <h1 className="text-lg font-bold text-custom-text-light">Panel de Agentes IA</h1>
         <HamburgerButton 
           isOpen={isMobileMenuOpen} 
           onClick={toggleMobileMenu} 
@@ -54,7 +54,7 @@ export default function Layout({ user, agents = [] }: LayoutProps) {
       
       {/* Main Content */}
       <div className="lg:ml-64 flex flex-col">
-        <main className="flex-1 p-4 lg:p-6">
+        <main className="flex-1">
           <Outlet />
         </main>
       </div>

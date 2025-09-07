@@ -9,16 +9,16 @@ export default function LoginForm({ error }: LoginFormProps) {
   const isSubmitting = fetcher.state === "submitting";
 
   return (
-    <div className="min-h-screen bg-gradient-dark flex items-center justify-center p-4">
+    <div className="min-h-screen bg-custom-bg-dark flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Tarjeta del formulario */}
-        <div className="bg-gradient-card rounded-2xl shadow-dark-lg p-8 border border-dark-600">
+        <div className="bg-custom-card-bg rounded-2xl shadow-deep-dark p-8 border border-custom-border">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-white mb-2">
+            <h1 className="text-3xl font-bold text-custom-text-light mb-2">
               Panel de Agentes IA
             </h1>
-            <p className="text-dark-300">
+            <p className="text-custom-text-muted">
               Inicia sesión para acceder al panel de control
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function LoginForm({ error }: LoginFormProps) {
             <div>
               <label 
                 htmlFor="email" 
-                className="block text-sm font-medium text-dark-200 mb-2"
+                className="block text-sm font-medium text-custom-text-muted mb-2"
               >
                 Email
               </label>
@@ -41,7 +41,7 @@ export default function LoginForm({ error }: LoginFormProps) {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200"
+                className="w-full px-4 py-3 bg-custom-card-bg-light border border-custom-border rounded-lg text-custom-text-light placeholder-custom-text-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent transition-all duration-200"
                 placeholder="tu@email.com"
                 disabled={isSubmitting}
               />
@@ -51,7 +51,7 @@ export default function LoginForm({ error }: LoginFormProps) {
             <div>
               <label 
                 htmlFor="password" 
-                className="block text-sm font-medium text-dark-200 mb-2"
+                className="block text-sm font-medium text-custom-text-muted mb-2"
               >
                 Contraseña
               </label>
@@ -60,7 +60,7 @@ export default function LoginForm({ error }: LoginFormProps) {
                 id="password"
                 name="password"
                 required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200"
+                className="w-full px-4 py-3 bg-custom-card-bg-light border border-custom-border rounded-lg text-custom-text-light placeholder-custom-text-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent transition-all duration-200"
                 placeholder="••••••••"
                 disabled={isSubmitting}
               />
@@ -77,11 +77,11 @@ export default function LoginForm({ error }: LoginFormProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-button text-white font-semibold py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-dark-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-button-accent text-custom-text-light font-semibold py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-custom-accent focus:ring-offset-2 focus:ring-offset-custom-bg-dark transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-custom-text-light mr-2"></div>
                   Iniciando sesión...
                 </div>
               ) : (
@@ -92,7 +92,7 @@ export default function LoginForm({ error }: LoginFormProps) {
 
           {/* Footer */}
           <div className="mt-6 text-center">
-            <p className="text-dark-400 text-sm">
+            <p className="text-custom-text-muted text-sm">
               Panel de gestión de agentes de inteligencia artificial
             </p>
           </div>

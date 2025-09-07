@@ -31,17 +31,17 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
   };
 
   return (
-    <div className="fixed left-0 top-0 w-64 bg-gradient-card h-screen flex flex-col border-r border-dark-600 z-10">
+    <div className="fixed left-0 top-0 w-64 bg-custom-card-bg-light h-screen flex flex-col border-r border-custom-border z-10">
       {/* Header */}
-      <div className="p-6 border-b border-dark-600">
-        <h1 className="text-xl font-bold text-white mb-2">
+      <div className="p-6 border-b border-custom-border">
+        <h1 className="text-xl font-bold text-custom-text-light mb-2">
           Panel de Agentes IA
         </h1>
-        <div className="text-sm text-dark-300">
+        <div className="text-sm text-custom-text-muted">
           <p className="font-medium">
             {user.user_metadata?.full_name || "Usuario"}
           </p>
-          <p className="text-dark-400">{user.email}</p>
+          <p className="text-custom-text-muted">{user.email}</p>
         </div>
       </div>
 
@@ -54,8 +54,8 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
               to="/dashboard"
               className={`flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
                 isActive("/dashboard")
-                  ? "bg-accent-600 text-white"
-                  : "text-dark-300 hover:bg-dark-700 hover:text-white"
+                  ? "bg-custom-accent text-custom-text-light"
+                  : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
               }`}
             >
               <svg
@@ -81,14 +81,14 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
             </Link>
           </li>
 
-          {/* Módulo 2 */}
+          {/* Historial */}
           <li>
             <Link
-              to="/modulo2"
+              to="/historial"
               className={`flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
-                isActive("/modulo2")
-                  ? "bg-accent-600 text-white"
-                  : "text-dark-300 hover:bg-dark-700 hover:text-white"
+                isActive("/historial")
+                  ? "bg-custom-accent text-custom-text-light"
+                  : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
               }`}
             >
               <svg
@@ -101,10 +101,10 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              Módulo 2
+              Historial
             </Link>
           </li>
 
@@ -112,7 +112,7 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
           <li>
             <button
               onClick={() => setIsAgentsExpanded(!isAgentsExpanded)}
-              className="flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors duration-200 text-dark-300 hover:bg-dark-700 hover:text-white"
+              className="flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors duration-200 text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
             >
               <div className="flex items-center">
                 <svg
@@ -157,8 +157,8 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
                         to={`/agent/${agent.id}`}
                         className={`flex items-center px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
                           isAgentActive(agent.id)
-                            ? "bg-accent-600 text-white"
-                            : "text-dark-400 hover:bg-dark-700 hover:text-white"
+                            ? "bg-custom-accent text-custom-text-light"
+                            : "text-custom-text-muted hover:bg-custom-hover-bg hover:text-custom-text-light"
                         }`}
                       >
                         <svg
@@ -179,7 +179,7 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
                     </li>
                   ))
                 ) : (
-                  <li className="px-3 py-2 text-sm text-dark-500">
+                  <li className="px-3 py-2 text-sm text-custom-text-muted">
                     No hay agentes creados
                   </li>
                 )}
@@ -190,7 +190,7 @@ export default function Sidebar({ user, agents = [] }: SidebarProps) {
       </nav>
 
         {/* Footer - Cerrar Sesión */}
-        <div className="p-4 border-t border-dark-600">
+        <div className="p-4 border-t border-custom-border">
           <Form method="post" action="/logout">
             <button
               type="submit"

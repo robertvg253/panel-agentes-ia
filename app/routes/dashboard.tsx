@@ -3,9 +3,9 @@ import { Link, Form } from "react-router";
 export default function DashboardPage() {
 
   return (
-    <div className="space-y-6">
+    <div className="p-4 lg:p-6 space-y-6">
       {/* Header de bienvenida */}
-      <div className="bg-gradient-card rounded-2xl shadow-dark-lg p-8 border border-dark-600">
+      <div className="bg-custom-card-bg rounded-2xl shadow-deep-dark p-8 border border-custom-border">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1"></div>
           <Form method="post" action="/logout">
@@ -31,17 +31,17 @@ export default function DashboardPage() {
           </Form>
         </div>
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-custom-text-light mb-4">
             ¡Bienvenido al Panel de Agentes IA!
           </h1>
-          <p className="text-dark-300 text-lg mb-8">
+          <p className="text-custom-text-muted text-lg mb-8">
             Gestiona tus agentes de inteligencia artificial de forma eficiente y profesional
           </p>
           
           {/* Botón principal para crear agente */}
           <Link
             to="/agent/new"
-            className="inline-flex items-center bg-gradient-button text-white font-semibold py-4 px-8 rounded-xl hover:opacity-90 transition-all duration-200 text-lg shadow-dark-lg"
+            className="inline-flex items-center bg-gradient-button-accent text-custom-text-light font-semibold py-4 px-8 rounded-xl hover:opacity-90 transition-all duration-200 text-lg shadow-deep-dark"
           >
             <svg
               className="w-6 h-6 mr-3"
@@ -63,11 +63,11 @@ export default function DashboardPage() {
 
       {/* Estadísticas rápidas */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-        <div className="bg-gradient-card rounded-xl shadow-dark-lg p-6 border border-dark-600">
+        <div className="bg-custom-card-bg rounded-xl shadow-deep-dark p-6 border border-custom-border">
           <div className="flex items-center">
-            <div className="p-3 bg-accent-600/20 rounded-lg">
+            <div className="p-3 bg-custom-accent/20 rounded-lg">
               <svg
-                className="w-6 h-6 text-accent-400"
+                className="w-6 h-6 text-custom-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -81,17 +81,17 @@ export default function DashboardPage() {
               </svg>
             </div>
             <div className="ml-4">
-              <p className="text-2xl font-bold text-white">0</p>
-              <p className="text-dark-300">Agentes Activos</p>
+              <p className="text-2xl font-bold text-custom-text-light">0</p>
+              <p className="text-custom-text-muted">Agentes Activos</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-card rounded-xl shadow-dark-lg p-6 border border-dark-600">
+        <div className="bg-custom-card-bg rounded-xl shadow-deep-dark p-6 border border-custom-border">
           <div className="flex items-center">
-            <div className="p-3 bg-green-600/20 rounded-lg">
+            <div className="p-3 bg-custom-accent/20 rounded-lg">
               <svg
-                className="w-6 h-6 text-green-400"
+                className="w-6 h-6 text-custom-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -105,17 +105,17 @@ export default function DashboardPage() {
               </svg>
             </div>
             <div className="ml-4">
-              <p className="text-2xl font-bold text-white">0</p>
-              <p className="text-dark-300">Versiones Guardadas</p>
+              <p className="text-2xl font-bold text-custom-text-light">0</p>
+              <p className="text-custom-text-muted">Versiones Guardadas</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-card rounded-xl shadow-dark-lg p-6 border border-dark-600">
+        <div className="bg-custom-card-bg rounded-xl shadow-deep-dark p-6 border border-custom-border">
           <div className="flex items-center">
-            <div className="p-3 bg-blue-600/20 rounded-lg">
+            <div className="p-3 bg-custom-accent/20 rounded-lg">
               <svg
-                className="w-6 h-6 text-blue-400"
+                className="w-6 h-6 text-custom-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -129,24 +129,24 @@ export default function DashboardPage() {
               </svg>
             </div>
             <div className="ml-4">
-              <p className="text-2xl font-bold text-white">0</p>
-              <p className="text-dark-300">Interacciones Hoy</p>
+              <p className="text-2xl font-bold text-custom-text-light">0</p>
+              <p className="text-custom-text-muted">Interacciones Hoy</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Acciones rápidas */}
-      <div className="bg-gradient-card rounded-2xl shadow-dark-lg p-6 lg:p-8 border border-dark-600">
-        <h2 className="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6">Acciones Rápidas</h2>
+      <div className="bg-custom-card-bg rounded-2xl shadow-deep-dark p-6 lg:p-8 border border-custom-border">
+        <h2 className="text-xl lg:text-2xl font-bold text-custom-text-light mb-4 lg:mb-6">Acciones Rápidas</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <Link
             to="/agent/new"
-            className="flex items-center p-4 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors duration-200 group"
+            className="flex items-center p-4 bg-custom-card-bg-light/50 hover:bg-custom-hover-bg rounded-lg transition-colors duration-200 group"
           >
-            <div className="p-2 bg-accent-600/20 rounded-lg group-hover:bg-accent-600/30 transition-colors duration-200">
+            <div className="p-2 bg-custom-accent/20 rounded-lg group-hover:bg-custom-accent/30 transition-colors duration-200">
               <svg
-                className="w-5 h-5 text-accent-400"
+                className="w-5 h-5 text-custom-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -160,18 +160,18 @@ export default function DashboardPage() {
               </svg>
             </div>
             <div className="ml-4">
-              <h3 className="font-semibold text-white">Crear Agente</h3>
-              <p className="text-sm text-dark-300">Configura un nuevo agente de IA</p>
+              <h3 className="font-semibold text-custom-text-light">Crear Agente</h3>
+              <p className="text-sm text-custom-text-muted">Configura un nuevo agente de IA</p>
             </div>
           </Link>
 
           <Link
             to="/modulo2"
-            className="flex items-center p-4 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors duration-200 group"
+            className="flex items-center p-4 bg-custom-card-bg-light/50 hover:bg-custom-hover-bg rounded-lg transition-colors duration-200 group"
           >
-            <div className="p-2 bg-green-600/20 rounded-lg group-hover:bg-green-600/30 transition-colors duration-200">
+            <div className="p-2 bg-custom-accent/20 rounded-lg group-hover:bg-custom-accent/30 transition-colors duration-200">
               <svg
-                className="w-5 h-5 text-green-400"
+                className="w-5 h-5 text-custom-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -185,8 +185,8 @@ export default function DashboardPage() {
               </svg>
             </div>
             <div className="ml-4">
-              <h3 className="font-semibold text-white">Módulo 2</h3>
-              <p className="text-sm text-dark-300">Accede a funcionalidades adicionales</p>
+              <h3 className="font-semibold text-custom-text-light">Módulo 2</h3>
+              <p className="text-sm text-custom-text-muted">Accede a funcionalidades adicionales</p>
             </div>
           </Link>
         </div>
